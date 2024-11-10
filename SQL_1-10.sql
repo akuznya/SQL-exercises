@@ -23,7 +23,7 @@ select PC.model, PC.price from Product join PC on PC.model=Product.model where m
 select maker from Product where maker not in (select maker from Product where type in ('Laptop') group by maker,type) and type  like 'PC' group by maker
 
 №9
-
+select distinct maker from product as pr join pc on pc.model=pr.model where pc.speed >= 450 group by maker
 
 №10
 select model, price from Printer group by model, price having price= (select max(price) as price from Printer)
